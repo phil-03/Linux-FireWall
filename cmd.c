@@ -82,7 +82,7 @@ int main(int argc, char **argv)
 
     mf_rule.action = NULL;
 
-    while (1) 
+    while (1)//continous loop 
     {
 
         static struct option long_options[] = 
@@ -131,7 +131,12 @@ int main(int argc, char **argv)
 
         };
         int option_index = 0;
-
+         
+        //Fucntion takes argv and argc , 
+        //shortopts- a string specifying the option characters that are valid as input options.
+        //longopts - describes the long options to accept, which is an array of struct option.
+        //indexptr -takes address of an integer variable, and getopt_long will store the index of the matched long option in the array 
+                   //longopts into it
         c = getopt_long(argc, argv, "od:s:m:p:t:n:q:c:a:", long_options, &option_index);
         /*Detect the end of the options. */
         if (c == -1)
